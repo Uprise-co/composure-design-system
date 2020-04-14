@@ -1,0 +1,11 @@
+{
+  "name": "@uprise/headings",
+  "version": "1.0.0",
+  "description": "- [Installation](#installation) - [Quick Example](#quick-start)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mark Santoso",
+  "license": "ISC"
+}

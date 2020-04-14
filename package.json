@@ -1,0 +1,23 @@
+{
+	"name": "uprise",
+	"author": "Mark Santoso",
+	"version": "1.2.2",
+	"description": "Uprise ui kit",
+	"scripts": {
+		"build": "babel --presets @babel/react --plugins @babel/plugin-proposal-optional-chaining src --out-dir ./lib --copy-files",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"exports": {
+		"./alert/": "./lib/alert"
+	},
+	"license": "ISC",
+	"devDependencies": {
+		"@babel/cli": "^7.5.5",
+		"@babel/core": "^7.5.5",
+		"@babel/preset-env": "^7.5.5",
+		"@babel/preset-react": "^7.9.4"
+	},
+	"dependencies": {
+ 		"@babel/plugin-syntax-optional-chaining": "^7.8.3"
+	}
+}
