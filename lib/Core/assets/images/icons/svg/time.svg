@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>time</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FFB25D" offset="0%"></stop>
+            <stop stop-color="#FF9944" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="-50.1241104%" y1="-94.323938%" x2="50%" y2="50%" id="linearGradient-2">
+            <stop stop-color="#39AEFF" offset="0%"></stop>
+            <stop stop-color="#9149FF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="You" transform="translate(-45.000000, -1086.000000)">
+            <g id="time" transform="translate(43.000000, 1084.000000)">
+                <g id="Group-15-Copy-3">
+                    <rect id="Rectangle" x="0" y="0" width="22" height="22"></rect>
+                    <circle id="Oval" stroke="url(#linearGradient-1)" stroke-width="2" cx="11" cy="11" r="6"></circle>
+                </g>
+                <path d="M12,10.375 L13.6875,10.375 C14.4123737,10.375 15,10.9626263 15,11.6875 L15,11.6875 C15,12.4123737 14.4123737,13 13.6875,13 L10,13 C9.44771525,13 9,12.5522847 9,12 L9,7.5 C9,6.67157288 9.67157288,6 10.5,6 L10.5,6 C11.3284271,6 12,6.67157288 12,7.5 L12,10.375 Z" id="Path" fill="url(#linearGradient-2)" fill-rule="nonzero" opacity="0.901669457"></path>
+            </g>
+        </g>
+    </g>
+</svg>

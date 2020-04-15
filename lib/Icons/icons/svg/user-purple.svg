@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="17px" height="21px" viewBox="0 0 17 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>You</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Navbar_You" transform="translate(-320.000000, -12.000000)">
+            <g id="You">
+                <g transform="translate(318.000000, 12.000000)">
+                    <rect id="Rectangle" x="-2.27373675e-13" y="0" width="21" height="21"></rect>
+                    <path d="M10.5,8 C8.290861,8 6.5,6.209139 6.5,4 C6.5,1.790861 8.290861,0 10.5,0 C12.709139,0 14.5,1.790861 14.5,4 C14.5,6.209139 12.709139,8 10.5,8 Z M2.01446179,17 C2.27327069,12.5383103 5.97342702,9 10.5,9 C15.026573,9 18.7267293,12.5383103 18.9855382,17 L19,17 L19,21 L2,21 L2,17 L2.01446179,17 Z" id="Combined-Shape" fill="#7D60FF"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
