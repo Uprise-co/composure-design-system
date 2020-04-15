@@ -16,5 +16,5 @@ $ npm i @uprise/Form --save
 This will render Form inputs :
 
 ```javascript
-import { TextInput, TextInputHorizontal } from '@uprise/Form'
+import { TextInput, TextInputHorizontal, Select } from '@uprise/Form'
 ```

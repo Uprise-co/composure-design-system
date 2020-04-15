@@ -1,4 +1,5 @@
-import {TextInput} from "./TextInput.js"
-import {TextInputHorizontal} from "./TextInputHorizontal.js"
+import { TextInput } from "./TextInput"
+import { TextInputHorizontal } from "./TextInputHorizontal"
+import { Select } from "./Select"
 
-export {TextInput, TextInputHorizontal}
+export { TextInput, TextInputHorizontal, Select }
