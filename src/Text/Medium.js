@@ -1,12 +1,13 @@
 import React from "react"
-import {string, number} from "prop-types"
+import { string, number } from "prop-types"
 import Styled from "styled-components"
 
 // Colors
-import {extended, primary} from "uprise-uikit/colors"
+import { extended, primary } from "@uprise/colors"
 
 const MediumStyle = Styled.p`
-      font-family: ${props => (props.weight === "bold" ? "Proxima Nova Semibold" : "Proxima Nova")};
+      font-family: ${props =>
+          props.weight === "bold" ? "Proxima Nova Semibold" : "Proxima Nova"};
       font-size: 15px;
       font-weight: ${props => props.weight};
       font-style: normal;
@@ -19,36 +20,46 @@ const MediumStyle = Styled.p`
       color: ${props => props.color};
 `
 
-export const Medium = ({children, className, width, textAlign, marginTop, weight, color, lineHeight}) => {
-	return (
-		<MediumStyle
-			className={className}
-			width={width}
-			weight={weight}
-			marginTop={marginTop}
-			textAlign={textAlign}
-			lineHeight={lineHeight}
-			color={color}>
-			{children}
-		</MediumStyle>
-	)
+export const Medium = ({
+    children,
+    className,
+    width,
+    textAlign,
+    marginTop,
+    weight,
+    color,
+    lineHeight
+}) => {
+    return (
+        <MediumStyle
+            className={className}
+            width={width}
+            weight={weight}
+            marginTop={marginTop}
+            textAlign={textAlign}
+            lineHeight={lineHeight}
+            color={color}
+        >
+            {children}
+        </MediumStyle>
+    )
 }
 
 // array, bool, func, number, object, string
 // symbol, node, element, elementType
 // instanceOf oneOf oneOfType shape, exact, func, any
 Medium.propTypes = {
-	weight: string,
-	color: string,
-	width: string,
-	textAlign: string,
-	lineHeight: number
+    weight: string,
+    color: string,
+    width: string,
+    textAlign: string,
+    lineHeight: number
 }
 
 Medium.defaultProps = {
-	weight: "normal",
-	color: extended.charcoal.one,
-	width: "",
-	textAlign: "",
-	lineHeight: 1.5
+    weight: "normal",
+    color: extended.charcoal.one,
+    width: "",
+    textAlign: "",
+    lineHeight: 1.5
 }

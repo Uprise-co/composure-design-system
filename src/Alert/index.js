@@ -1,9 +1,9 @@
 import React from "react"
-import {bool, func, string} from "prop-types"
+import { string } from "prop-types"
 import Styled from "styled-components"
 
 // Colors
-import {semantic, backgrounds, extended} from "uprise-uikit/colors"
+import { semantic, backgrounds, extended } from "@uprise/colors"
 
 const SuccessStyle = Styled.div`
       font-family: "Proxima Nova Semibold";
@@ -65,44 +65,60 @@ const WarningStyle = Styled.div`
       background-color: ${semantic.warning};
 `
 
-export const Alert = ({children, className, textAlign, type}) => {
-	switch (type) {
-		case "primary":
-			return (
-				<PrimaryStyle className={className} type={type} textAlign={textAlign}>
-					{children}
-				</PrimaryStyle>
-			)
-		case "success":
-			return (
-				<SuccessStyle className={className} type={type} textAlign={textAlign}>
-					{children}
-				</SuccessStyle>
-			)
-		case "warning":
-			return (
-				<WarningStyle className={className} type={type} textAlign={textAlign}>
-					{children}
-				</WarningStyle>
-			)
-		case "error":
-			return (
-				<ErrorStyle className={className} type={type} textAlign={textAlign}>
-					{children}
-				</ErrorStyle>
-			)
-	}
+export const Alert = ({ children, className, textAlign, type }) => {
+    switch (type) {
+        case "primary":
+            return (
+                <PrimaryStyle
+                    className={className}
+                    type={type}
+                    textAlign={textAlign}
+                >
+                    {children}
+                </PrimaryStyle>
+            )
+        case "success":
+            return (
+                <SuccessStyle
+                    className={className}
+                    type={type}
+                    textAlign={textAlign}
+                >
+                    {children}
+                </SuccessStyle>
+            )
+        case "warning":
+            return (
+                <WarningStyle
+                    className={className}
+                    type={type}
+                    textAlign={textAlign}
+                >
+                    {children}
+                </WarningStyle>
+            )
+        case "error":
+            return (
+                <ErrorStyle
+                    className={className}
+                    type={type}
+                    textAlign={textAlign}
+                >
+                    {children}
+                </ErrorStyle>
+            )
+    }
 }
 
 // array, bool, func, number, object, string
 // symbol, node, element, elementType
 // instanceOf oneOf oneOfType shape, exact, func, any
 Alert.propTypes = {
-	type: string,
-	textAlign: string
+    type: string,
+    textAlign: string
 }
 
 Alert.defaultProps = {
-	type: "",
-	textAlign: ""
+    type: "",
+    textAlign: ""
 }

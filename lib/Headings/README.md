@@ -6,9 +6,9 @@
 ## Installation
 
 ```bash
-$ yarn add @uprise/Headings 
+$ yarn add @uprise/headings 
 # or
-$ npm i @uprise/Headings --save
+$ npm i @uprise/headings --save
 ```
 
 ## Quick Start

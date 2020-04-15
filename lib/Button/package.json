@@ -1,6 +1,6 @@
 {
   "name": "@uprise/button",
-  "version": "1.0.1",
+  "version": "1.0.7",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,10 @@
   "license": "ISC",
   "dependencies": {
     "@uprise/colors": "^1.0.0",
+    "@uprise/core": "^1.0.1",
+    "@uprise/headings": "^1.0.0",
     "@uprise/icons": "^1.0.1",
-    "@uprise/spacing": "^1.0.0"
+    "@uprise/spacing": "^1.0.0",
+    "@uprise/text": "^1.0.0"
   }
 }

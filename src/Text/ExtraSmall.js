@@ -1,12 +1,13 @@
 import React from "react"
-import {bool, func, string} from "prop-types"
+import { bool, func, string } from "prop-types"
 import Styled from "styled-components"
 
 // Colors
-import {extended, primary} from "uprise-uikit/colors"
+import { extended, primary } from "@uprise/colors"
 
 const ExtraSmallStyle = Styled.p`
-      font-family: ${props => (props.weight === "bold" ? "Proxima Nova Semibold" : "Proxima Nova")};
+      font-family: ${props =>
+          props.weight === "bold" ? "Proxima Nova Semibold" : "Proxima Nova"};
       font-size: 12px;
       font-weight: ${props => props.weight};
       font-style: normal;
@@ -18,27 +19,40 @@ const ExtraSmallStyle = Styled.p`
       color: ${props => props.color};
 `
 
-export const ExtraSmall = ({children, className, width, textAlign, weight, color}) => {
-	return (
-		<ExtraSmallStyle className={className} width={width} weight={weight} textAlign={textAlign} color={color}>
-			{children}
-		</ExtraSmallStyle>
-	)
+export const ExtraSmall = ({
+    children,
+    className,
+    width,
+    textAlign,
+    weight,
+    color
+}) => {
+    return (
+        <ExtraSmallStyle
+            className={className}
+            width={width}
+            weight={weight}
+            textAlign={textAlign}
+            color={color}
+        >
+            {children}
+        </ExtraSmallStyle>
+    )
 }
 
 // array, bool, func, number, object, string
 // symbol, node, element, elementType
 // instanceOf oneOf oneOfType shape, exact, func, any
 ExtraSmall.propTypes = {
-	weight: string,
-	color: string,
-	width: string,
-	textAlign: string
+    weight: string,
+    color: string,
+    width: string,
+    textAlign: string
 }
 
 ExtraSmall.defaultProps = {
-	weight: "normal",
-	color: extended.charcoal.two,
-	width: "",
-	textAlign: ""
+    weight: "normal",
+    color: extended.charcoal.two,
+    width: "",
+    textAlign: ""
 }

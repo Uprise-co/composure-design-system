@@ -1,6 +1,6 @@
 {
   "name": "@uprise/headings",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "- [Installation](#installation) - [Quick Example](#quick-start)",
   "main": "index.js",
   "scripts": {

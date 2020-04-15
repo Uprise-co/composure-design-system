@@ -155,7 +155,7 @@ export const Button = ({
                     {isLoading ? (
                         <img
                             className=""
-                            src={require(`assets/images/animated/ellipsis-white.svg`)}
+                            src={require(`@uprise/core/assets/images/animated/ellipsis-white.svg`)}
                         />
                     ) : (
                         <span>{title}</span>
@@ -177,7 +177,7 @@ export const Button = ({
                     {isLoading ? (
                         <img
                             className=""
-                            src={require(`assets/images/animated/ellipsis-white.svg`)}
+                            src={require(`@uprise/core/assets/images/animated/ellipsis-white.svg`)}
                         />
                     ) : (
                         <span>{title}</span>
@@ -199,7 +199,7 @@ export const Button = ({
                     {isLoading ? (
                         <img
                             className=""
-                            src={require(`assets/images/animated/ellipsis-white.svg`)}
+                            src={require(`@uprise/core/assets/images/animated/ellipsis-white.svg`)}
                         />
                     ) : (
                         <span>{title}</span>
@@ -221,7 +221,7 @@ export const Button = ({
                     {isLoading ? (
                         <img
                             className=""
-                            src={require(`assets/images/animated/ellipsis-white.svg`)}
+                            src={require(`@uprise/core/assets/images/animated/ellipsis-white.svg`)}
                         />
                     ) : (
                         <Fragment>

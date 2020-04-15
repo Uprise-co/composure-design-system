@@ -1,11 +1,14 @@
 {
   "name": "@uprise/text",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "- [Installation](#installation) - [Quick Example](#quick-start)",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Mark Santoso",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@uprise/colors": "^1.0.0"
+  }
 }

@@ -1,12 +1,13 @@
 import React from "react"
-import {bool, func, string} from "prop-types"
+import { bool, func, string } from "prop-types"
 import Styled from "styled-components"
 
 // Colors
-import {extended, primary} from "uprise-uikit/colors"
+import { extended, primary } from "@uprise/colors"
 
 const Heading5 = Styled.h5`
-      font-family: ${props => (props.weight === "bold" ? "Proxima Nova Semibold" : "Proxima Nova")}; ;
+      font-family: ${props =>
+          props.weight === "bold" ? "Proxima Nova Semibold" : "Proxima Nova"}; ;
       font-size: 18px;
       font-style: normal;
       font-stretch: normal;
@@ -17,25 +18,25 @@ const Heading5 = Styled.h5`
       color: ${props => props.color};
 `
 
-export const H5 = ({children, ...props}) => {
-	return <Heading5 {...props}>{children}</Heading5>
+export const H5 = ({ children, ...props }) => {
+    return <Heading5 {...props}>{children}</Heading5>
 }
 
 // array, bool, func, number, object, string
 // symbol, node, element, elementType
 // instanceOf oneOf oneOfType shape, exact, func, any
 H5.propTypes = {
-	className: string,
-	color: string,
-	width: string,
-	textAlign: string,
-	weight: string
+    className: string,
+    color: string,
+    width: string,
+    textAlign: string,
+    weight: string
 }
 
 H5.defaultProps = {
-	weight: "bold",
-	className: "",
-	color: primary.charcoal,
-	width: "",
-	textAlign: ""
+    weight: "bold",
+    className: "",
+    color: primary.charcoal,
+    width: "",
+    textAlign: ""
 }
