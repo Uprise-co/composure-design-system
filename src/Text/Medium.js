@@ -23,6 +23,7 @@ const MediumStyle = Styled.p`
 export const Medium = ({
     children,
     className,
+    onClick,
     width,
     textAlign,
     marginTop,
@@ -33,6 +34,7 @@ export const Medium = ({
     return (
         <MediumStyle
             className={className}
+            onClick={onClick}
             width={width}
             weight={weight}
             marginTop={marginTop}

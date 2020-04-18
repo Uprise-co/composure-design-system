@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>overview</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="-12.5363302%" y1="25.910485%" x2="367.804452%" y2="61.460118%" id="linearGradient-1">
+            <stop stop-color="#FFCA75" offset="0%"></stop>
+            <stop stop-color="#FF7722" offset="47.2260346%"></stop>
+            <stop stop-color="#FF43B8" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="-60.3868317%" y1="-94.323938%" x2="50%" y2="50%" id="linearGradient-2">
+            <stop stop-color="#39AEFF" offset="0%"></stop>
+            <stop stop-color="#9149FF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Skill" transform="translate(-40.000000, -381.000000)">
+            <g id="overview" transform="translate(40.000000, 381.000000)">
+                <rect id="Rectangle" fill-opacity="0.01" fill="#FFFFFF" x="0" y="0" width="22" height="22"></rect>
+                <path d="M11,19.2 C15.5287349,19.2 19.2,15.5287349 19.2,11 C19.2,6.47126505 15.5287349,2.8 11,2.8 C6.47126505,2.8 2.8,6.47126505 2.8,11 C2.8,15.5287349 6.47126505,19.2 11,19.2 Z M11,21 C5.4771525,21 1,16.5228475 1,11 C1,5.4771525 5.4771525,1 11,1 C16.5228475,1 21,5.4771525 21,11 C21,16.5228475 16.5228475,21 11,21 Z" id="Oval" fill="url(#linearGradient-1)"></path>
+                <path d="M8,6.80503317 L8,15.1949668 C8,15.4565754 8.21207564,15.668651 8.47368421,15.668651 C8.55418412,15.668651 8.63335602,15.6481355 8.7037256,15.6090413 L16.2546659,11.4140745 C16.4833529,11.2870261 16.5657474,10.9986456 16.438699,10.7699586 C16.3957411,10.6926344 16.3319901,10.6288834 16.2546659,10.5859255 L8.7037256,6.39095867 C8.47503857,6.26391032 8.18665806,6.34630475 8.05960971,6.57499178 C8.0205155,6.64536136 8,6.72453326 8,6.80503317 Z" id="Path-24" fill="url(#linearGradient-2)" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
+</svg>

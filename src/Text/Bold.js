@@ -15,9 +15,14 @@ const BoldStyle = Styled.span`
       color: ${props => props.color};
 `
 
-export const Bold = ({ children, className, marginTop, color }) => {
+export const Bold = ({ children, className, onClick, marginTop, color }) => {
     return (
-        <BoldStyle className={className} marginTop={marginTop} color={color}>
+        <BoldStyle
+            className={className}
+            onClick={onClick}
+            marginTop={marginTop}
+            color={color}
+        >
             {children}
         </BoldStyle>
     )

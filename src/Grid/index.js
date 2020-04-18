@@ -1,7 +1,7 @@
-import {ContainerFluid} from "./ContainerFluid.js"
-import {Container} from "./Container.js"
-import {Row} from "./Row.js"
-import {Col} from "./Column.js"
-import Layout from "./Layout"
+import "./bootstrap-grid-utils.css"
+import { ContainerFluid } from "./ContainerFluid"
+import { Container } from "./Container"
+import { Row } from "./Row"
+import { Col } from "./Column"
 
-export {ContainerFluid, Container, Row, Col, Layout}
+export { ContainerFluid, Container, Row, Col }

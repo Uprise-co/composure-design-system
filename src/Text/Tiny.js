@@ -22,6 +22,7 @@ const TinyStyle = Styled.p`
 export const Tiny = ({
     children,
     className,
+    onClick,
     width,
     textAlign,
     weight,
@@ -30,6 +31,7 @@ export const Tiny = ({
     return (
         <TinyStyle
             className={className}
+            onClick={onClick}
             width={width}
             weight={weight}
             textAlign={textAlign}

@@ -1,11 +1,14 @@
 {
   "name": "@uprise/modal",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "- [Installation](#installation) - [Quick Example](#quick-start)",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Mark Santoso",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@uprise/icons": "^1.0.1"
+  }
 }

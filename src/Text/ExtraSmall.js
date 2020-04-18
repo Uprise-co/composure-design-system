@@ -22,6 +22,7 @@ const ExtraSmallStyle = Styled.p`
 export const ExtraSmall = ({
     children,
     className,
+    onClick,
     width,
     textAlign,
     weight,
@@ -29,7 +30,8 @@ export const ExtraSmall = ({
 }) => {
     return (
         <ExtraSmallStyle
-            className={className}
+		className={className}
+		onClick={onClick}
             width={width}
             weight={weight}
             textAlign={textAlign}

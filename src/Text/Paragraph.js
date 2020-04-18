@@ -12,7 +12,7 @@ const Paragraph = Styled.p`
       font-weight: ${props => props.weight};
       font-style: normal;
       font-stretch: normal;
-      line-height: 1.56;
+      line-height: ${props => (props.lineHeight ? props.lineHeight : "1.56")};
       letter-spacing: normal;
       display: ${props => (props.inline ? "inline" : "block")};
       width: ${props => props.width};
@@ -29,18 +29,22 @@ export const P = ({
     inline,
     fontSize,
     className,
+    onClick,
     width,
     smallWidth,
+    lineHeight,
     textAlign,
     weight,
     color
 }) => {
     return (
         <Paragraph
+            onClick={onClick}
             className={className}
             fontSize={fontSize}
             width={width}
             inline={inline}
+            lineHeight={lineHeight}
             weight={weight}
             smallWidth={smallWidth}
             textAlign={textAlign}

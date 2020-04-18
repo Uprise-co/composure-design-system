@@ -24,6 +24,7 @@ export const Small = ({
     children,
     inline,
     className,
+    onClick,
     width,
     textAlign,
     weight,
@@ -31,7 +32,8 @@ export const Small = ({
 }) => {
     return (
         <SmallStyle
-            className={className}
+		className={className}
+		onClick={onClick}
             inline={inline}
             width={width}
             weight={weight}
