@@ -18,8 +18,10 @@ const SelectStyles = Styled.select`
       -moz-appearance: none;
       appearance: none;
       padding: 15px;
+      padding-left: 0;
       padding-top: 10px;
       text-indent: 0px;
+
       border-bottom: ${props => {
           if (props.focused) {
               return `1px solid ${extended.blue.one}`

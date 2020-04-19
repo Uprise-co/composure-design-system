@@ -2,7 +2,7 @@ import React, { Fragment } from "react"
 import { bool, func, string } from "prop-types"
 import Styled from "styled-components"
 import { spacing } from "@uprise/spacing"
-import { primary, secondary, extended, backgrounds } from "@uprise/colors"
+import { primary, extended, backgrounds } from "@uprise/colors"
 import Icons from "@uprise/icons"
 
 const Base = Styled.button`
@@ -13,7 +13,8 @@ const Base = Styled.button`
     border-radius: 10px;
     border: none;
     height: 50px;
-    padding: ${props => props.padding};
+    padding-left: ${props => props.paddingLeft};
+    padding-right: ${props => props.paddingRight};
     font-size: ${props => props.fontSize};
     color: ${primary.purple};
     font-family: ${props =>
@@ -25,57 +26,85 @@ export const Primary = Styled(Base)`
     border: solid 1px ${props => {
         if (props.disabled) {
             return extended.charcoal.two
-        } else if (props.transparent) {
+        } else if (props.white) {
             return backgrounds.white
         } else {
             return primary.purple
         }
-    }}
+    }};
         
     background-color: ${props => {
         if (props.disabled) {
             return extended.charcoal.two
-        } else if (props.transparent) {
-            return "transparent"
+        } else if (props.white) {
+            return backgrounds.white
         } else {
             return primary.purple
         }
-    }}
+    }};
+
+    text-transform: ${props => {
+        if (props.uppercase) {
+            return "uppercase"
+        } else {
+            return "none"
+        }
+    }};
 
     border-radius: ${props =>
         props.borderRadius ? props.borderRadius : "10px"};
-    color: ${backgrounds.white};
+    color: ${props => {
+        if (props.white) {
+            return extended.purple.dark
+        } else {
+            return backgrounds.white
+        }
+    }};
     width: ${props => props.width};
     height: ${props => props.height};
 
-      &:hover {
-            background-color: ${extended.purple.dark};
-      }
+    &:hover {
+        background-color: ${props => {
+            if (props.white) {
+                return backgrounds.white
+            } else {
+                return extended.purple.five
+            }
+        }}; 
+    } 
 `
 
 export const Secondary = Styled(Base)`
     color: ${props => {
         if (props.disabled) {
             return extended.charcoal.three
-        } else if (props.transparent) {
+        } else if (props.white) {
             return backgrounds.white
         } else {
             return primary.purple
         }
-    }}
+    }};
  
     border: solid 1px ${props => {
         if (props.disabled) {
             return extended.charcoal.three
-        } else if (props.transparent) {
-            return "transparent"
+        } else if (props.white) {
+            return backgrounds.white
         } else {
             return primary.purple
         }
-    }}
+    }};
+
+    text-transform: ${props => {
+        if (props.uppercase) {
+            return "uppercase"
+        } else {
+            return "none"
+        }
+    }};
 
     background-color: ${props => {
-        if (props.transparent) {
+        if (props.white) {
             return "transparent"
         } else {
             return backgrounds.white
@@ -86,50 +115,93 @@ export const Secondary = Styled(Base)`
         props.borderRadius ? props.borderRadius : "10px"};
     width: ${props => props.width};
     height: ${props => props.height};
-    border: solid 1px ${props => {
-        if (props.disabled) {
-            return extended.charcoal.three
-        } else {
-            return primary.purple
-        }
-    }};
-         
+   
     &:hover {
-        background-color: ${extended.purple.five};
+        background-color: ${props => {
+            if (props.white) {
+                return "none"
+            } else {
+                return extended.purple.five
+            }
+        }}; 
     }
 `
 
 export const Tertiary = Styled(Primary)`
-      width: ${props => props.width};
-      height: ${props => props.height};
-      color: ${props =>
-          props.disabled ? extended.charcoal.two : primary.purple};
-      background-color: ${props =>
-          props.disabled ? extended.charcoal.five : backgrounds.fadedPurple};
-      border: none;
-      border-radius: ${props =>
-          props.borderRadius ? props.borderRadius : "10px"};
+    width: ${props => props.width};
+    height: ${props => props.height};
+    color: ${props => {
+        if (props.disabled) {
+            return extended.charcoal.two
+        } else if (props.white) {
+            return backgrounds.white
+        } else {
+            return primary.purple
+        }
+    }};
+ 
+    background-color: ${props => {
+        if (props.disabled) {
+            return extended.charcoal.five
+        } else if (props.white) {
+            return "transparent"
+        } else {
+            return backgrounds.fadedPurple
+        }
+    }};
+        
+    border: none;
+    border-radius: ${props =>
+        props.borderRadius ? props.borderRadius : "10px"};
 
-      &:hover {
-            background-color: ${extended.purple.five};
-            color:  ${primary.purple};
+    text-transform: ${props => {
+        if (props.uppercase) {
+            return "uppercase"
+        } else {
+            return "none"
+        }
+    }};
 
-      }
+    &:hover {
+        background-color: ${props => {
+            if (props.white) {
+                return "transparent"
+            } else {
+                return extended.purple.five
+            }
+        }};
+        
+        color: ${props => {
+            if (props.white) {
+                return backgrounds.white
+            } else {
+                return primary.purple
+            }
+        }}; 
+    }
 `
 
 export const TextButton = Styled(Primary)`
-      width: ${props => props.width};
-      height: ${props => props.height};
-      color: ${primary.purple};
-      background-color: ${backgrounds.white};
-      border: none;
+    width: ${props => props.width};
+    height: ${props => props.height};
+    color: ${primary.purple};   
+    background-color: ${backgrounds.white};
+    border: none;
 	border-radius: ${props => (props.borderRadius ? props.borderRadius : "10px")};
-	
-	&:hover {
-            background-color: ${backgrounds.white};
-            color:  ${primary.purple};
+    
+    text-transform: ${props => {
+        if (props.uppercase) {
+            return "uppercase"
+        } else {
+            return "none"
+        }
+    }};
 
-      }
+	&:hover {
+        background-color: ${backgrounds.white};
+        color: ${primary.purple};
+
+    }
 `
 
 export const IconRight = Styled.img`
@@ -147,10 +219,13 @@ export const Button = ({
     borderRadius,
     isLoading,
     transparent,
+    paddingLeft,
+    paddingRight,
+    uppercase,
     icon,
     ...props
 }) => {
-    let width, height, fontSize, padding
+    let width, height, fontSize
 
     switch (size) {
         case "tiny":
@@ -192,7 +267,9 @@ export const Button = ({
                     role="button"
                     weight={weight}
                     fontSize={fontSize}
-                    padding={padding}
+                    uppercase={uppercase}
+                    paddingLeft={paddingLeft}
+                    paddingRight={paddingRight}
                     width={width}
                     transparent={transparent}
                     height={height}
@@ -215,8 +292,10 @@ export const Button = ({
                     role="button"
                     weight={weight}
                     fontSize={fontSize}
+                    uppercase={uppercase}
                     transparent={transparent}
-                    padding={padding}
+                    paddingLeft={paddingLeft}
+                    paddingRight={paddingRight}
                     borderRadius={borderRadius}
                     width={width}
                     height={height}
@@ -238,7 +317,9 @@ export const Button = ({
                     role="button"
                     weight={weight}
                     fontSize={fontSize}
-                    padding={padding}
+                    uppercase={uppercase}
+                    paddingLeft={paddingLeft}
+                    paddingRight={paddingRight}
                     borderRadius={borderRadius}
                     width={width}
                     height={height}
@@ -259,8 +340,10 @@ export const Button = ({
                 <TextButton
                     role="button"
                     weight={weight}
+                    uppercase={uppercase}
                     fontSize={fontSize}
-                    padding={padding}
+                    paddingLeft={paddingLeft}
+                    paddingRight={paddingRight}
                     borderRadius={borderRadius}
                     width={width}
                     height={height}

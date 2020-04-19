@@ -30,6 +30,8 @@ export const P = ({
     fontSize,
     className,
     onClick,
+    onMouseEnter,
+    onMouseLeave,
     width,
     smallWidth,
     lineHeight,
@@ -40,6 +42,8 @@ export const P = ({
     return (
         <Paragraph
             onClick={onClick}
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
             className={className}
             fontSize={fontSize}
             width={width}
