@@ -6,9 +6,9 @@
 ## Installation
 
 ```bash
-$ yarn add @uprise/Charts 
+$ yarn add @uprise/charts 
 # or
-$ npm i @uprise/Charts --save
+$ npm i @uprise/charts --save
 ```
 
 ## Quick Start

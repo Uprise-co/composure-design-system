@@ -1,8 +1,8 @@
 import React from "react"
-import {number, string} from "prop-types"
-import Styled, {css} from "styled-components"
+import { number, string } from "prop-types"
+import Styled, { css } from "styled-components"
 
-import {primary, extended, backgrounds} from "uprise-uikit/colors"
+import { primary, extended, backgrounds } from "@uprise/colors"
 
 const ProgressWrap = Styled.div`
 	display: flex;
@@ -21,32 +21,32 @@ const Progress = Styled.div`
 
 `
 
-export const ProgressBar = ({height, className, percentage, radius}) => {
-	return (
-		<ProgressWrap className={className} height={height} radius={radius}>
-			<Progress
-				data-testid={`completed-percentage`}
-				percentage={`${percentage}%`}
-				height={height}
-				backgroundColor={primary.purple}
-				radius={radius}
-			/>
-		</ProgressWrap>
-	)
+export const ProgressBar = ({ height, className, percentage, radius }) => {
+    return (
+        <ProgressWrap className={className} height={height} radius={radius}>
+            <Progress
+                data-testid={`completed-percentage`}
+                percentage={`${percentage}%`}
+                height={height}
+                backgroundColor={primary.purple}
+                radius={radius}
+            />
+        </ProgressWrap>
+    )
 }
 
 // array, bool, func, number, object, string
 // symbol, node, element, elementType
 // instanceOf oneOf oneOfType shape, exact, func, any
 ProgressBar.propTypes = {
-	percentage: number,
-	height: string,
-	className: string,
-	radius: number
+    percentage: number,
+    height: string,
+    className: string,
+    radius: number
 }
 
 ProgressBar.defaultProps = {
-	percentage: 0,
-	radius: 5,
-	height: "10px"
+    percentage: 0,
+    radius: 5,
+    height: "10px"
 }

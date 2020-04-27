@@ -1,15 +1,16 @@
-import React, {Fragment} from "react"
-import {bool, func, string} from "prop-types"
+import React, { Fragment } from "react"
+import { bool, func, string } from "prop-types"
 import Styled from "styled-components"
 
 // Colors
-import {backgrounds, extended, primary} from "uprise-uikit/colors"
+import { backgrounds, extended, primary } from "@uprise/colors"
 
 const ProgressStyles = Styled.div`
 `
 
 const ItemTitle = Styled.span`
-      font-family: ${props => (props.active ? "Proxima Nova Semibold" : "Proxima Nova")};
+      font-family: ${props =>
+          props.active ? "Proxima Nova Semibold" : "Proxima Nova"};
       top: ${props => (props.active ? "2px" : "0px")};
       position: relative;
       width: 100%;
@@ -23,7 +24,8 @@ const ItemTitle = Styled.span`
             right: 0;
             width: 4px;
             height: 21px;
-            background-color: ${props => (props.active ? primary.purple : extended.charcoal.one)};
+            background-color: ${props =>
+                props.active ? primary.purple : extended.charcoal.one};
       }
 `
 
@@ -32,8 +34,10 @@ const ProgressItemStyles = Styled.section`
       height: 51px;
       font-size: 15px;
       border-right: 1px solid ${extended.purple.five};
-      background-color: ${props => (props.active ? backgrounds.fadedPurple : backgrounds.white)};
-      color: ${props => (props.active ? primary.purple : extended.charcoal.one)};
+      background-color: ${props =>
+          props.active ? backgrounds.fadedPurple : backgrounds.white};
+      color: ${props =>
+          props.active ? primary.purple : extended.charcoal.one};
       padding-top: 1rem;
 `
 
@@ -83,49 +87,57 @@ const OvalStyles = Styled.div`
       }
 `
 
-const ProgressItem = ({children, active, ...props}) => {
-	return <ProgressItemStyles active={active}>{children}</ProgressItemStyles>
+const ProgressItem = ({ children, active, ...props }) => {
+    return <ProgressItemStyles active={active}>{children}</ProgressItemStyles>
 }
 
 ProgressItem.propTypes = {
-	active: bool.isRequired
+    active: bool.isRequired
 }
 
 ProgressItem.defaultProps = {
-	active: false
+    active: false
 }
 
-export const VerticalProgress = ({items, ...props}) => {
-	return (
-		<ProgressStyles {...props}>
-			{items.map((item, index) => {
-				return (
-					<ProgressItem key={index} active={item.active}>
-						<Fragment>
-							{item.active && <OvalActiveStyles last={index === items.length - 1} />}
-							{!item.active && <OvalStyles last={index === items.length - 1} />}
-							<ItemTitle active={item.active}>{item.title}</ItemTitle>
-						</Fragment>
-					</ProgressItem>
-				)
-			})}
-		</ProgressStyles>
-	)
+export const VerticalProgress = ({ items, ...props }) => {
+    return (
+        <ProgressStyles {...props}>
+            {items.map((item, index) => {
+                return (
+                    <ProgressItem key={index} active={item.active}>
+                        <Fragment>
+                            {item.active && (
+                                <OvalActiveStyles
+                                    last={index === items.length - 1}
+                                />
+                            )}
+                            {!item.active && (
+                                <OvalStyles last={index === items.length - 1} />
+                            )}
+                            <ItemTitle active={item.active}>
+                                {item.title}
+                            </ItemTitle>
+                        </Fragment>
+                    </ProgressItem>
+                )
+            })}
+        </ProgressStyles>
+    )
 }
 
 // array, bool, func, number, object, string
 // symbol, node, element, elementType
 // instanceOf oneOf oneOfType shape, exact, func, any
 VerticalProgress.propTypes = {
-	className: string,
-	color: string,
-	width: string,
-	textAlign: string
+    className: string,
+    color: string,
+    width: string,
+    textAlign: string
 }
 
 VerticalProgress.defaultProps = {
-	className: "",
-	color: primary.charcoal,
-	width: "",
-	textAlign: ""
+    className: "",
+    color: primary.charcoal,
+    width: "",
+    textAlign: ""
 }

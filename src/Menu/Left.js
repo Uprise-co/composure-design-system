@@ -1,13 +1,13 @@
-import React, {Fragment, useState} from "react"
-import {bool, func, string} from "prop-types"
+import React, { Fragment, useState } from "react"
+import { bool, func, string } from "prop-types"
 import Styled from "styled-components"
-import {useHistory} from "react-router-dom"
+import { useHistory } from "react-router-dom"
 // Navigation
 import left from "navigation/left"
 // icons
 import Icons from "assets/images/icons/svg"
 // Colors
-import {backgrounds, extended, primary} from "uprise-uikit/colors"
+import { backgrounds, extended, primary } from "@uprise/colors"
 
 const LeftMenuStyles = Styled.div`
 	@media (max-width: 1024px) {
@@ -16,7 +16,8 @@ const LeftMenuStyles = Styled.div`
 `
 
 const ItemTitle = Styled.span`
-      font-family: ${props => (props.active ? "Proxima Nova Semibold" : "Proxima Nova")};
+      font-family: ${props =>
+          props.active ? "Proxima Nova Semibold" : "Proxima Nova"};
       top: 2px;
       font-size: 13px;
       position: relative;
@@ -36,8 +37,10 @@ const MenuItemStyles = Styled.button`
       height: 51px;
       font-size: 15px;
       border-right: 1px solid ${extended.purple.five};
-      background-color: ${props => (props.active ? backgrounds.fadedPurple : backgrounds.white)};
-      color: ${props => (props.active ? primary.purple : extended.charcoal.one)};
+      background-color: ${props =>
+          props.active ? backgrounds.fadedPurple : backgrounds.white};
+      color: ${props =>
+          props.active ? primary.purple : extended.charcoal.one};
       padding-top: 1rem;
       padding-right: 0;
       padding-left: 0;
@@ -50,7 +53,8 @@ const MenuItemStyles = Styled.button`
             right: 0;
             width: 6px;
             height: 21px;
-            background-color: ${props => (props.active ? primary.purple : extended.charcoal.one)};
+            background-color: ${props =>
+                props.active ? primary.purple : extended.charcoal.one};
       }
 
       &:hover {
@@ -84,66 +88,72 @@ const Icon = Styled.img`
 	}
 `
 
-const MenuItem = ({children, active, onClick, ...props}) => {
-	return (
-		<MenuItemStyles onClick={onClick} active={active}>
-			{children}
-		</MenuItemStyles>
-	)
+const MenuItem = ({ children, active, onClick, ...props }) => {
+    return (
+        <MenuItemStyles onClick={onClick} active={active}>
+            {children}
+        </MenuItemStyles>
+    )
 }
 
 MenuItem.propTypes = {
-	active: bool.isRequired
+    active: bool.isRequired
 }
 
 MenuItem.defaultProps = {
-	active: false
+    active: false
 }
 
-export const LeftMenu = ({active, ...props}) => {
-	const history = useHistory()
+export const LeftMenu = ({ active, ...props }) => {
+    const history = useHistory()
 
-	// Set active menu item
-	const setActive = items => {
-		let menuItems = items
-		menuItems.map(item => {
-			item.active = false
-		})
-		menuItems[active].active = true
-		return menuItems
-	}
+    // Set active menu item
+    const setActive = items => {
+        let menuItems = items
+        menuItems.map(item => {
+            item.active = false
+        })
+        menuItems[active].active = true
+        return menuItems
+    }
 
-	const [items, setItems] = useState(setActive(left))
+    const [items, setItems] = useState(setActive(left))
 
-	return (
-		<LeftMenuStyles {...props}>
-			{items.map((item, index) => {
-				const itemIcon = item.active ? `${item.icon}Purple` : `${item.icon}Grey`
+    return (
+        <LeftMenuStyles {...props}>
+            {items.map((item, index) => {
+                const itemIcon = item.active
+                    ? `${item.icon}Purple`
+                    : `${item.icon}Grey`
 
-				return (
-					<MenuItem key={index} active={item.active} onClick={() => history.push(`/${item.path}`)}>
-						<Icon src={Icons[itemIcon]} />
-						<ItemTitle active={item.active}>{item.title}</ItemTitle>
-					</MenuItem>
-				)
-			})}
-		</LeftMenuStyles>
-	)
+                return (
+                    <MenuItem
+                        key={index}
+                        active={item.active}
+                        onClick={() => history.push(`/${item.path}`)}
+                    >
+                        <Icon src={Icons[itemIcon]} />
+                        <ItemTitle active={item.active}>{item.title}</ItemTitle>
+                    </MenuItem>
+                )
+            })}
+        </LeftMenuStyles>
+    )
 }
 
 // array, bool, func, number, object, string
 // symbol, node, element, elementType
 // instanceOf oneOf oneOfType shape, exact, func, any
 LeftMenu.propTypes = {
-	className: string,
-	color: string,
-	width: string,
-	textAlign: string
+    className: string,
+    color: string,
+    width: string,
+    textAlign: string
 }
 
 LeftMenu.defaultProps = {
-	className: "",
-	color: primary.charcoal,
-	width: "",
-	textAlign: ""
+    className: "",
+    color: primary.charcoal,
+    width: "",
+    textAlign: ""
 }

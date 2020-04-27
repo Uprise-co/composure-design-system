@@ -1,14 +1,9 @@
 import React from "react"
-import {string, bool} from "prop-types"
-import styled, {css} from "styled-components"
-
-// Colors
-import {backgrounds} from "uprise-uikit/colors"
 
 const RootWrapper = styled.div``
 
-export const ModalRoot = ({children}) => {
-	return <RootWrapper id='root-modal'>{children}</RootWrapper>
+export const ModalRoot = ({ children }) => {
+    return <RootWrapper id="root-modal">{children}</RootWrapper>
 }
 
 // array, bool, func, number, object, string
@@ -17,5 +12,5 @@ export const ModalRoot = ({children}) => {
 ModalRoot.propTypes = {}
 
 ModalRoot.defaultProps = {
-	onClick: () => null
+    onClick: () => null
 }

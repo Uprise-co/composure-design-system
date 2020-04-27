@@ -1,10 +1,10 @@
-import React, {Fragment} from "react"
-import {bool, func, string} from "prop-types"
+import React, { Fragment } from "react"
+import { bool, func, string } from "prop-types"
 import Styled from "styled-components"
 // Colors
-import {backgrounds, extended, primary} from "uprise-uikit/colors"
+import { backgrounds, extended, primary } from "@uprise/colors"
 // spacing
-import {spacing} from "uprise-uikit/spacing"
+import { spacing } from "@uprise/spacing"
 
 const ListStyles = Styled.ul`
       margin-left: 0;
@@ -37,29 +37,29 @@ const ItemStyles = Styled.li`
       }
 `
 
-export const List = ({items, ...props}) => {
-	return (
-		<ListStyles {...props}>
-			{items.map((item, index) => {
-				return <ItemStyles key={index}>{item.title}</ItemStyles>
-			})}
-		</ListStyles>
-	)
+export const List = ({ items, ...props }) => {
+    return (
+        <ListStyles {...props}>
+            {items.map((item, index) => {
+                return <ItemStyles key={index}>{item.title}</ItemStyles>
+            })}
+        </ListStyles>
+    )
 }
 
 // array, bool, func, number, object, string
 // symbol, node, element, elementType
 // instanceOf oneOf oneOfType shape, exact, func, any
 List.propTypes = {
-	className: string,
-	color: string,
-	width: string,
-	textAlign: string
+    className: string,
+    color: string,
+    width: string,
+    textAlign: string
 }
 
 List.defaultProps = {
-	className: "",
-	color: primary.charcoal,
-	width: "",
-	textAlign: ""
+    className: "",
+    color: primary.charcoal,
+    width: "",
+    textAlign: ""
 }
