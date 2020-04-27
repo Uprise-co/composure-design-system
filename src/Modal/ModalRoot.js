@@ -1,6 +1,7 @@
 import React from "react"
+import Styled from "styled-components"
 
-const RootWrapper = styled.div``
+const RootWrapper = Styled.div``
 
 export const ModalRoot = ({ children }) => {
     return <RootWrapper id="root-modal">{children}</RootWrapper>
