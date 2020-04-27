@@ -101,8 +101,11 @@ export const TaskButton = ({
         case "summary":
             title = `Summary`
             break
+        case "science":
+            title = `Science`
+            break
         case "examples":
-            title = `Exercise:  ${index + 1}`
+            title = `Example:  ${index + 1}`
             break
         case "bonus":
             title = task.title
@@ -160,4 +163,8 @@ TaskButton.propTypes = {
     skillId: string.isRequired,
     iconLeft: string.isRequired,
     completedIcon: string
+}
+
+TaskButton.defaultProps = {
+    index: 0
 }
