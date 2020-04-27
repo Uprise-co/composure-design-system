@@ -6,9 +6,9 @@
 ## Installation
 
 ```bash
-$ yarn add @uprise/Button 
+$ yarn add @uprise/button
 # or
-$ npm i @uprise/Button --save
+$ npm i @uprise/button --save
 ```
 
 ## Quick Start
