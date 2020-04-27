@@ -32,7 +32,7 @@ export const Primary = Styled(Base)`
             return primary.purple
         }
     }};
-        
+
     background-color: ${props => {
         if (props.disabled) {
             return extended.charcoal.two
@@ -68,10 +68,10 @@ export const Primary = Styled(Base)`
             if (props.white) {
                 return backgrounds.white
             } else {
-                return extended.purple.five
+                return extended.purple.dark
             }
-        }}; 
-    } 
+        }};
+    }
 `
 
 export const Secondary = Styled(Base)`
@@ -84,7 +84,7 @@ export const Secondary = Styled(Base)`
             return primary.purple
         }
     }};
- 
+
     border: solid 1px ${props => {
         if (props.disabled) {
             return extended.charcoal.three
@@ -115,7 +115,7 @@ export const Secondary = Styled(Base)`
         props.borderRadius ? props.borderRadius : "10px"};
     width: ${props => props.width};
     height: ${props => props.height};
-   
+
     &:hover {
         background-color: ${props => {
             if (props.white) {
@@ -123,7 +123,7 @@ export const Secondary = Styled(Base)`
             } else {
                 return extended.purple.five
             }
-        }}; 
+        }};
     }
 `
 
@@ -139,7 +139,7 @@ export const Tertiary = Styled(Primary)`
             return primary.purple
         }
     }};
- 
+
     background-color: ${props => {
         if (props.disabled) {
             return extended.charcoal.five
@@ -149,7 +149,7 @@ export const Tertiary = Styled(Primary)`
             return backgrounds.fadedPurple
         }
     }};
-        
+
     border: none;
     border-radius: ${props =>
         props.borderRadius ? props.borderRadius : "10px"};
@@ -170,25 +170,25 @@ export const Tertiary = Styled(Primary)`
                 return extended.purple.five
             }
         }};
-        
+
         color: ${props => {
             if (props.white) {
                 return backgrounds.white
             } else {
                 return primary.purple
             }
-        }}; 
+        }};
     }
 `
 
 export const TextButton = Styled(Primary)`
     width: ${props => props.width};
     height: ${props => props.height};
-    color: ${primary.purple};   
+    color: ${primary.purple};
     background-color: ${backgrounds.white};
     border: none;
 	border-radius: ${props => (props.borderRadius ? props.borderRadius : "10px")};
-    
+
     text-transform: ${props => {
         if (props.uppercase) {
             return "uppercase"
