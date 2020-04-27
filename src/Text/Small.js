@@ -22,6 +22,7 @@ const SmallStyle = Styled.p`
 
 export const Small = ({
     children,
+    myRef,
     inline,
     className,
     onClick,
@@ -32,8 +33,9 @@ export const Small = ({
 }) => {
     return (
         <SmallStyle
-		className={className}
-		onClick={onClick}
+            className={className}
+            ref={myRef}
+            onClick={onClick}
             inline={inline}
             width={width}
             weight={weight}

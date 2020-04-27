@@ -21,6 +21,7 @@ const NoteStyle = Styled.p`
 
 export const Note = ({
     children,
+    myRef,
     className,
     onClick,
     width,
@@ -30,8 +31,9 @@ export const Note = ({
 }) => {
     return (
         <NoteStyle
-		className={className}
-		onClick={onClick}
+            className={className}
+            onClick={onClick}
+            ref={myRef}
             width={width}
             weight={weight}
             textAlign={textAlign}

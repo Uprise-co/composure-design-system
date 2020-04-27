@@ -25,6 +25,7 @@ const Paragraph = Styled.p`
 `
 
 export const P = ({
+    myRef,
     children,
     inline,
     fontSize,
@@ -41,6 +42,7 @@ export const P = ({
 }) => {
     return (
         <Paragraph
+            ref={myRef}
             onClick={onClick}
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
