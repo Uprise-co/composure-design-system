@@ -5,6 +5,8 @@
 	"description": "Uprise ui kit",
 	"scripts": {
 		"build": "babel --presets @babel/react --plugins @babel/plugin-proposal-optional-chaining src --out-dir ./lib --copy-files",
+		"start:storybook": "start-storybook",
+		"build:storybook": "build-storybook -o ../uprise.github.io",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"exports": {
@@ -13,11 +15,21 @@
 	"license": "ISC",
 	"devDependencies": {
 		"@babel/cli": "^7.5.5",
-		"@babel/core": "^7.5.5",
+		"@babel/core": "^7.9.6",
 		"@babel/preset-env": "^7.5.5",
-		"@babel/preset-react": "^7.9.4"
+		"@babel/preset-react": "^7.9.4",
+		"@storybook/addon-backgrounds": "^5.3.18",
+		"@storybook/addon-knobs": "^5.3.18",
+		"@storybook/addon-notes": "^5.3.18",
+		"@storybook/addon-storysource": "^5.3.18",
+		"@storybook/addon-viewport": "^5.3.18",
+		"@storybook/react": "^5.3.18",
+		"babel-loader": "^8.1.0"
 	},
 	"dependencies": {
- 		"@babel/plugin-syntax-optional-chaining": "^7.8.3"
+		"@babel/plugin-syntax-optional-chaining": "^7.8.3",
+		"react": "^16.13.1",
+		"react-dom": "^16.13.1",
+		"styled-components": "^5.1.0"
 	}
 }
