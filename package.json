@@ -5,8 +5,8 @@
 	"description": "Uprise ui kit",
 	"scripts": {
 		"build": "babel --presets @babel/react --plugins @babel/plugin-proposal-optional-chaining src --out-dir ./lib --copy-files",
-		"start:storybook": "start-storybook",
-		"build:storybook": "build-storybook -o ../uprise.github.io",
+		"start:storybook": "start-storybook -c .storybook watch-css -s ./styles",
+		"build:storybook": "build-storybook -o ../uprise.github.io/public",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"exports": {
