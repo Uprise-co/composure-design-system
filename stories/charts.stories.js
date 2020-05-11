@@ -1,14 +1,9 @@
 import React from "react";
 import { ProgressBar, EmojiDonut } from "../src/Charts";
-import {
-  withKnobs,
-  select,
-  text,
-  boolean,
-  color,
-  number
-} from "@storybook/addon-knobs";
+import { withKnobs, text, number } from "@storybook/addon-knobs";
 import { primary, backgrounds } from "../src/Colors";
+import Emoji from "../styles/emoji-high-score-2x.png";
+
 const styles = {
   width: "100%",
   maxWidth: 600,
@@ -36,7 +31,7 @@ const options = {
 const data = {
   datasets: [
     {
-      data: [0, 100 - 0],
+      data: [72, 28],
       backgroundColor: [primary.purple, backgrounds.fadedPurple],
       borderColor: [primary.purple, backgrounds.fadedPurple],
       hoverBackgroundColor: [primary.purple, backgrounds.fadedPurple],
@@ -54,16 +49,32 @@ export const ProgressChart = () => (
   />
 );
 
-export const EmojiDonutChart = () => (
-  <EmojiDonut
-    width={"200px"}
-    height={"200px"}
-    emojiWidth={"200px"}
-    emojiHeight={"200px"}
-    cutoutPercentage={50}
-    emojix={"100px"}
-    emojiy={"100px"}
-    data={data}
-    image={`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYFoZUZ0SgytDi4ekRE8FTlM9zggaZ3O_5QYUtcWcLHOi5qF7s&s`}
-  />
-);
+const props = {
+  image: Emoji,
+  width: 110 * 2,
+  height: 110 * 2,
+  emojix: 32.5 * 2,
+  emojiy: 26.5 * 2,
+  emojiWidth: 57.1 * 2,
+  emojiHeight: 57.1 * 2,
+  data: {
+    datasets: [
+      {
+        data: [72, 28],
+        backgroundColor: ["rgb(125, 96, 255)", "rgb(248,248,255)"],
+        borderColor: ["rgb(125, 96, 255)", "rgb(248,248,255)"],
+        hoverBackgroundColor: ["rgb(125, 96, 255)", "rgb(248,248,255)"],
+        borderWidth: 0,
+        weight: 1
+      }
+    ]
+  },
+  options: {
+    cutoutPercentage: 72,
+    maintainAspectRatio: false,
+    tooltips: "{enabled: false}"
+  },
+  cutoutPercentage: 0
+};
+
+export const EmojiDonutChart = () => <EmojiDonut {...props} />;
