@@ -63,11 +63,12 @@ export const Primary = Styled(Base)`
     width: ${props => props.width};
     height: ${props => props.height};
 
+    
     &:hover {
         background-color: ${props => {
-            if (props.white) {
+            if (props.white && props.hover) {
                 return backgrounds.white
-            } else {
+            } else if (props.hover) {
                 return extended.purple.dark
             }
         }};
@@ -118,9 +119,9 @@ export const Secondary = Styled(Base)`
 
     &:hover {
         background-color: ${props => {
-            if (props.white) {
+            if (props.white && props.hover) {
                 return "none"
-            } else {
+            } else if (props.hover) {
                 return extended.purple.five
             }
         }};
@@ -164,9 +165,9 @@ export const Tertiary = Styled(Primary)`
 
     &:hover {
         background-color: ${props => {
-            if (props.white) {
+            if (props.white && props.hover) {
                 return "transparent"
-            } else {
+            } else if (props.hover) {
                 return extended.purple.five
             }
         }};
@@ -223,6 +224,7 @@ export const Button = ({
     paddingRight,
     uppercase,
     icon,
+    hover,
     ...props
 }) => {
     let width, height, fontSize
@@ -273,6 +275,7 @@ export const Button = ({
                     width={width}
                     transparent={transparent}
                     height={height}
+                    hover={hover}
                     borderRadius={borderRadius}
                     {...props}
                 >
@@ -299,6 +302,7 @@ export const Button = ({
                     borderRadius={borderRadius}
                     width={width}
                     height={height}
+                    hover={hover}
                     {...props}
                 >
                     {isLoading ? (
@@ -323,6 +327,7 @@ export const Button = ({
                     borderRadius={borderRadius}
                     width={width}
                     height={height}
+                    hover={hover}
                     {...props}
                 >
                     {isLoading ? (
@@ -347,6 +352,7 @@ export const Button = ({
                     borderRadius={borderRadius}
                     width={width}
                     height={height}
+                    hover={hover}
                     {...props}
                 >
                     {isLoading ? (
@@ -379,7 +385,8 @@ Button.propTypes = {
     disabled: bool,
     isPressed: bool,
     isLoading: bool,
-    onClick: func
+    onClick: func,
+    hover: bool
 }
 
 Button.defaultProps = {
@@ -387,6 +394,7 @@ Button.defaultProps = {
     className: "",
     title: "",
     size: "large",
+    hover: true,
     fullWidth: true,
     icon: false,
     isLoading: false,
