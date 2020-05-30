@@ -7,14 +7,15 @@ import { backgrounds, extended, primary, semantic } from "@uprise/colors"
 
 const TextInputWrapper = Styled.div`
       min-height: 51px;
-      margin-top: ${props => (props.isFirst ? "10px" : "0px")};
-      margin-bottom: ${props => (props.isLast ? "0px" : "21px")};
+      margin-top: ${(props) => (props.isFirst ? "10px" : "0px")};
+      margin-bottom: ${(props) => (props.isLast ? "0px" : "21px")};
 `
 const TextInputStyles = Styled.input`
       border: 0;
       font-size: 16px;
       width: 100%;
-      border-bottom: ${props => {
+      outline: ${(props) => (props.outline ? "" : "none")}
+      border-bottom: ${(props) => {
           if (props.focused) {
               return `1px solid ${extended.blue.one}`
           } else if (props.validation?.errors.length > 0) {
@@ -27,7 +28,7 @@ const TextInputStyles = Styled.input`
 `
 
 const LabelStyles = Styled.label`
-      font-size: ${props => (props.focused ? "12px" : "16px")};
+      font-size: ${(props) => (props.focused ? "12px" : "16px")};
       color: ${extended.charcoal.two};
       display: block;
       margin-bottom: 4px;
@@ -36,7 +37,7 @@ const LabelStyles = Styled.label`
 
 const MessageStyles = Styled.label`
       font-size: 12px;
-      color:  ${props => {
+      color:  ${(props) => {
           if (props.focused) {
               return `${extended.blue.one}`
           } else if (props.validation?.errors.length > 0) {
@@ -59,6 +60,7 @@ export const TextInput = ({
     value,
     isFirst,
     isLast,
+    outline,
     validation,
     validateControl,
     placeholder,
@@ -67,11 +69,11 @@ export const TextInput = ({
     const [focused, setFocused] = useState(false)
     let inputRef = useRef(null)
 
-    const _onFocus = event => {
+    const _onFocus = (event) => {
         setFocused(true)
     }
 
-    const _onBlur = event => {
+    const _onBlur = (event) => {
         setFocused(false)
     }
 
@@ -86,8 +88,9 @@ export const TextInput = ({
                 {label} {isRequired ? " * " : ""}
             </LabelStyles>
             <TextInputStyles
-                ref={elem => (inputRef = elem)}
+                ref={(elem) => (inputRef = elem)}
                 type={type}
+                outline={outline}
                 placeholder={placeholder}
                 name={name}
                 id={id}
@@ -124,11 +127,11 @@ TextInput.propTypes = {
     type: string,
     label: string.isRequired,
     isRequired: bool,
-    isLast: bool
+    isLast: bool,
 }
 
 TextInput.defaultProps = {
     isRequired: false,
     isLast: false,
-    validation: {}
+    validation: {},
 }
