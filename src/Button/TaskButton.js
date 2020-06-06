@@ -1,6 +1,7 @@
 import React from "react"
 import { object, bool, string } from "prop-types"
 import Styled from "styled-components"
+import moment from "moment-timezone"
 // UI
 import { H6 } from "@uprise/headings"
 import { Tiny } from "@uprise/text"
@@ -8,13 +9,13 @@ import { extended, backgrounds } from "@uprise/colors"
 import { spacing } from "@uprise/spacing"
 
 const TaskStyle = Styled.div`
-	padding: ${props =>
+	padding: ${(props) =>
         props.last
             ? spacing.s5
             : `${spacing.s5} ${spacing.s5} 0 ${spacing.s5}`};
       width: 100%;
       height: 100%;
-	background-color: ${props =>
+	background-color: ${(props) =>
         props.active ? extended.purple.five : backgrounds.white};
 
 
@@ -24,7 +25,7 @@ const TaskStyle = Styled.div`
 	}
 
 	@media (max-width: 1024px) {
-		padding: ${props =>
+		padding: ${(props) =>
             props.last
                 ? spacing.s3
                 : `${spacing.s3} ${spacing.s3} 0 ${spacing.s3}`};
@@ -33,7 +34,7 @@ const TaskStyle = Styled.div`
 `
 
 const Content = Styled.div`
-      border-bottom: ${props =>
+      border-bottom: ${(props) =>
           props.last ? 0 : `1px solid ${extended.purple.five}`};
       display: flex;
       flex-direction: row;
@@ -81,7 +82,7 @@ export const TaskButton = ({
     skillId,
     iconLeft,
     completedIcon,
-    handleClick
+    handleClick,
 }) => {
     let title, subTitle
     switch (type) {
@@ -138,7 +139,9 @@ export const TaskButton = ({
                             {type === "bonus" ||
                             type === "homework" ||
                             type === "lessons"
-                                ? task.time + "min"
+                                ? moment(task.time, "HH:mm:ss").format(
+                                      "mm:ss"
+                                  ) + " min"
                                 : ""}
                         </Tiny>
                     </TaskTextStyle>
@@ -162,9 +165,9 @@ TaskButton.propTypes = {
     active: bool,
     skillId: string.isRequired,
     iconLeft: string.isRequired,
-    completedIcon: string
+    completedIcon: string,
 }
 
 TaskButton.defaultProps = {
-    index: 0
+    index: 0,
 }

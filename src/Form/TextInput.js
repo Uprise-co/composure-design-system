@@ -14,7 +14,7 @@ const TextInputStyles = Styled.input`
       border: 0;
       font-size: 16px;
       width: 100%;
-      outline: ${(props) => (props.outline ? "" : "none")}
+      outline: ${(props) => (props.outline ? "auto" : "none")}
       border-bottom: ${(props) => {
           if (props.focused) {
               return `1px solid ${extended.blue.one}`

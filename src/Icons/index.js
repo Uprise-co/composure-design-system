@@ -1,5 +1,6 @@
 // Icons
 export default {
+    azure: require("./icons/png/azure/azure.png"),
     home: require("./icons/png/home/home.png"),
     homeActive: require("./icons/png/home-active/home-active.png"),
     library: require("./icons/png/library/library.png"),
@@ -26,20 +27,21 @@ export default {
     send: require("./icons/png/send/send.png"),
     logoHead: require("./icons/png/logo-head/logo-head.png"),
     chevronUpBlue: require("./icons/png/chevron-up-blue/chevron-up-blue.png"),
-    language: require("./icons/png/language/language@3x.png"),
-    location: require("./icons/png/location/location@3x.png"),
-    education: require("./icons/png/education/education@3x.png"),
-    telephone: require("./icons/png/telephone/telephone@3x.png"),
-    success: require("./icons/png/success/success@3x.png"),
-    close: require("./icons/png/close/close@3x.png"),
+    language: require("./icons/png/language/language.png"),
+    location: require("./icons/png/location/location.png"),
+    education: require("./icons/png/education/education.png"),
+    telephone: require("./icons/png/telephone/telephone.png"),
+    success: require("./icons/png/success/success.png"),
+    successPurple: require("./icons/png/success-purple/success-purple.png"),
+    close: require("./icons/png/close/close.png"),
     password: {
         src: "",
         height: "1rem",
-        width: "1rem"
+        width: "1rem",
     },
     information: {
         src: "",
         height: "1rem",
-        width: "0.4375rem"
-    }
+        width: "0.4375rem",
+    },
 }
