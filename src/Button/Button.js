@@ -13,37 +13,37 @@ const Base = Styled.button`
     border-radius: 10px;
     border: none;
     height: 50px;
-    padding-left: ${props => props.paddingLeft};
-    padding-right: ${props => props.paddingRight};
-    font-size: ${props => props.fontSize};
+    padding-left: ${(props) => props.paddingLeft};
+    padding-right: ${(props) => props.paddingRight};
+    font-size: ${(props) => props.fontSize};
     color: ${primary.purple};
-    font-family: ${props =>
+    font-family: ${(props) =>
         props.weight === "bold" ? "Proxima Nova Semibold" : "Proxima Nova"};
-    cursor: ${props => (props.disabled ? "not-allowed" : "pointer")};
+    cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
 `
 
 export const Primary = Styled(Base)`
-    border: solid 1px ${props => {
+    border: solid 1px ${(props) => {
         if (props.disabled) {
             return extended.charcoal.two
-        } else if (props.white) {
+        } else if (props.transparent) {
             return backgrounds.white
         } else {
             return primary.purple
         }
     }};
 
-    background-color: ${props => {
+    background-color: ${(props) => {
         if (props.disabled) {
             return extended.charcoal.two
-        } else if (props.white) {
+        } else if (props.transparent) {
             return backgrounds.white
         } else {
             return primary.purple
         }
     }};
 
-    text-transform: ${props => {
+    text-transform: ${(props) => {
         if (props.uppercase) {
             return "uppercase"
         } else {
@@ -51,22 +51,22 @@ export const Primary = Styled(Base)`
         }
     }};
 
-    border-radius: ${props =>
+    border-radius: ${(props) =>
         props.borderRadius ? props.borderRadius : "10px"};
-    color: ${props => {
-        if (props.white) {
+    color: ${(props) => {
+        if (props.transparent) {
             return extended.purple.dark
         } else {
             return backgrounds.white
         }
     }};
-    width: ${props => props.width};
-    height: ${props => props.height};
+    width: ${(props) => props.width};
+    height: ${(props) => props.height};
 
     
     &:hover {
-        background-color: ${props => {
-            if (props.white && props.hover) {
+        background-color: ${(props) => {
+            if (props.transparent && props.hover) {
                 return backgrounds.white
             } else if (props.hover) {
                 return extended.purple.dark
@@ -76,27 +76,27 @@ export const Primary = Styled(Base)`
 `
 
 export const Secondary = Styled(Base)`
-    color: ${props => {
+    color: ${(props) => {
         if (props.disabled) {
             return extended.charcoal.three
-        } else if (props.white) {
+        } else if (props.transparent) {
             return backgrounds.white
         } else {
             return primary.purple
         }
     }};
 
-    border: solid 1px ${props => {
+    border: solid 1px ${(props) => {
         if (props.disabled) {
             return extended.charcoal.three
-        } else if (props.white) {
+        } else if (props.transparent) {
             return backgrounds.white
         } else {
             return primary.purple
         }
     }};
 
-    text-transform: ${props => {
+    text-transform: ${(props) => {
         if (props.uppercase) {
             return "uppercase"
         } else {
@@ -104,22 +104,22 @@ export const Secondary = Styled(Base)`
         }
     }};
 
-    background-color: ${props => {
-        if (props.white) {
+    background-color: ${(props) => {
+        if (props.transparent) {
             return "transparent"
         } else {
             return backgrounds.white
         }
     }};
 
-    border-radius: ${props =>
+    border-radius: ${(props) =>
         props.borderRadius ? props.borderRadius : "10px"};
-    width: ${props => props.width};
-    height: ${props => props.height};
+    width: ${(props) => props.width};
+    height: ${(props) => props.height};
 
     &:hover {
-        background-color: ${props => {
-            if (props.white && props.hover) {
+        background-color: ${(props) => {
+            if (props.transparent && props.hover) {
                 return "none"
             } else if (props.hover) {
                 return extended.purple.five
@@ -129,22 +129,22 @@ export const Secondary = Styled(Base)`
 `
 
 export const Tertiary = Styled(Primary)`
-    width: ${props => props.width};
-    height: ${props => props.height};
-    color: ${props => {
+    width: ${(props) => props.width};
+    height: ${(props) => props.height};
+    color: ${(props) => {
         if (props.disabled) {
             return extended.charcoal.two
-        } else if (props.white) {
+        } else if (props.transparent) {
             return backgrounds.white
         } else {
             return primary.purple
         }
     }};
 
-    background-color: ${props => {
+    background-color: ${(props) => {
         if (props.disabled) {
             return extended.charcoal.five
-        } else if (props.white) {
+        } else if (props.transparent) {
             return "transparent"
         } else {
             return backgrounds.fadedPurple
@@ -152,10 +152,10 @@ export const Tertiary = Styled(Primary)`
     }};
 
     border: none;
-    border-radius: ${props =>
+    border-radius: ${(props) =>
         props.borderRadius ? props.borderRadius : "10px"};
 
-    text-transform: ${props => {
+    text-transform: ${(props) => {
         if (props.uppercase) {
             return "uppercase"
         } else {
@@ -164,16 +164,16 @@ export const Tertiary = Styled(Primary)`
     }};
 
     &:hover {
-        background-color: ${props => {
-            if (props.white && props.hover) {
+        background-color: ${(props) => {
+            if (props.transparent && props.hover) {
                 return "transparent"
             } else if (props.hover) {
                 return extended.purple.five
             }
         }};
 
-        color: ${props => {
-            if (props.white) {
+        color: ${(props) => {
+            if (props.transparent) {
                 return backgrounds.white
             } else {
                 return primary.purple
@@ -183,14 +183,14 @@ export const Tertiary = Styled(Primary)`
 `
 
 export const TextButton = Styled(Primary)`
-    width: ${props => props.width};
-    height: ${props => props.height};
+    width: ${(props) => props.width};
+    height: ${(props) => props.height};
     color: ${primary.purple};
     background-color: ${backgrounds.white};
     border: none;
-	border-radius: ${props => (props.borderRadius ? props.borderRadius : "10px")};
+	border-radius: ${(props) => (props.borderRadius ? props.borderRadius : "10px")};
 
-    text-transform: ${props => {
+    text-transform: ${(props) => {
         if (props.uppercase) {
             return "uppercase"
         } else {
@@ -323,6 +323,7 @@ export const Button = ({
                     fontSize={fontSize}
                     uppercase={uppercase}
                     paddingLeft={paddingLeft}
+                    transparent={transparent}
                     paddingRight={paddingRight}
                     borderRadius={borderRadius}
                     width={width}
@@ -386,7 +387,7 @@ Button.propTypes = {
     isPressed: bool,
     isLoading: bool,
     onClick: func,
-    hover: bool
+    hover: bool,
 }
 
 Button.defaultProps = {
@@ -399,5 +400,5 @@ Button.defaultProps = {
     icon: false,
     isLoading: false,
     disabled: false,
-    isPressed: false
+    isPressed: false,
 }
