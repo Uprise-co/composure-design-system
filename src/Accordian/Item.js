@@ -9,7 +9,7 @@ import {spacing} from "@uprise/spacing"
 import {H4} from "@uprise/headings"
 import {Medium} from "@uprise/text"
 // Icons
-import Icons from "constants/Icons"
+import Icons from "@uprise/icons"
 
 const AccordianItemStyle = Styled.div`
       padding-top: ${spacing.s6};

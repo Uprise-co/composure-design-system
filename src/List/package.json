@@ -7,5 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Mark Santoso",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@uprise/colors": "^1.0.0",
+    "@uprise/spacing": "^1.0.0"
+  }
 }
