@@ -9,6 +9,7 @@
   "author": "Mark Santoso",
   "license": "ISC",
   "dependencies": {
+    "@uprise/colors": "^1.0.0",
     "@uprise/icons": "^1.0.1"
   }
 }
