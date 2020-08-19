@@ -1,1 +1,3 @@
-import "./fonts/fonts.css";
+import * as fonts from "./fonts/fonts.css";
+
+export { fonts };
