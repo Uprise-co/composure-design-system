@@ -64,6 +64,7 @@ export const TextInput = ({
   validation,
   validateControl,
   placeholder,
+  onChange,
   ...props
 }) => {
   const [focused, setFocused] = useState(false);
@@ -99,6 +100,7 @@ export const TextInput = ({
         required={isRequired}
         focused={focused}
         value={value}
+        onChange={value => onChange(value)}
       />
       {validation[name]?.errors && (
         <MessageStyles
