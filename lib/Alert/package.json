@@ -8,7 +8,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@uprise/colors": "^1.0.0"
+    "@uprise/colors": "^1.0.0",
+    "@uprise/icons": "^1.1.0",
+    "@uprise/typography": "^1.0.0"
   },
   "repository": {
     "type": "git",
