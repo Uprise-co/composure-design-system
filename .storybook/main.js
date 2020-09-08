@@ -5,6 +5,6 @@ module.exports = {
     "@storybook/addon-notes/register-panel",
     "@storybook/addon-storysource",
     "@storybook/addon-viewport/register",
-    "@storybook/addon-backgrounds",
-  ],
+    "@storybook/addon-backgrounds"
+  ]
 };
