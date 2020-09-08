@@ -1,3 +1,3 @@
-import * as fonts from "./fonts/fonts.css";
+import * as fonts from "./fonts/proxima-nova-web-fonts/fonts.css";
 
 export { fonts };
