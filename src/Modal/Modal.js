@@ -128,6 +128,7 @@ export const Modal = ({
   useEffect(() => {
     onOpen();
     window.addEventListener("keydown", _onEscKeyDown, false);
+    return () => window.removeEventListener("keydown", _onEscKeyDown, false);
   }, []);
 
   useEffect(() => {
@@ -137,6 +138,7 @@ export const Modal = ({
   const _onEscKeyDown = e => {
     if (e.key !== "Escape") return;
     setShowModal(false);
+    handleClose();
   };
 
   if (showModal) {
