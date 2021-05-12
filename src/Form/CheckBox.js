@@ -11,14 +11,14 @@ import { extended, semantic } from "@uprise/colors";
 const CheckBoxWrapper = Styled.div`
     display: flex;
     flex-direction: row;
-    margin-top: ${(props) => (props.isFirst ? "10px" : "0px")};
+    margin-top: ${props => (props.isFirst ? "10px" : "0px")};
  `;
 const CheckBoxStyles = Styled.input`
     border: 0;
     font-size: 16px;
     margin-right: ${spacing.s6};
     width: auto;
-    outline: ${(props) => (props.outline ? "auto" : "none")}
+    outline: ${props => (props.outline ? "auto" : "none")}
     padding-bottom: 8px;
 `;
 
@@ -37,7 +37,7 @@ const TextWrap = Styled.div`
 
 const MessageStyles = Styled.label`
     font-size: 12px;
-    color:  ${(props) => {
+    color:  ${props => {
       if (props.focused) {
         return `${extended.blue.one}`;
       } else if (props.validation?.errors.length > 0) {
@@ -67,11 +67,11 @@ export const CheckBox = ({
   const [focused, setFocused] = useState(false);
   let inputRef = useRef(null);
 
-  const _onFocus = (event) => {
+  const _onFocus = event => {
     setFocused(true);
   };
 
-  const _onBlur = (event) => {
+  const _onBlur = event => {
     setFocused(false);
   };
 
@@ -85,7 +85,7 @@ export const CheckBox = ({
       <CheckBoxStyles
         name={name}
         id={id}
-        ref={(elem) => (inputRef = elem)}
+        ref={elem => (inputRef = elem)}
         type="checkbox"
         validate-control={validateControl}
         validation={validation[name]}
@@ -97,7 +97,7 @@ export const CheckBox = ({
       <TextWrap>
         <LabelStyles focused={focused}>
           {isRequired ? " * " : ""}
-          {label}
+          <span dangerouslySetInnerHTML={{ __html: label }} />
         </LabelStyles>
         {validation[name]?.errors && (
           <MessageStyles
@@ -124,10 +124,10 @@ CheckBox.propTypes = {
   validation: object,
   type: string,
   label: string.isRequired,
-  isRequired: bool,
+  isRequired: bool
 };
 
 CheckBox.defaultProps = {
   isRequired: false,
-  validation: {},
+  validation: {}
 };

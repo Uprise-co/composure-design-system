@@ -1,0 +1,6 @@
+projectKey=composure
+serverUrl=http://54.159.71.215
+serverVersion=8.4.2.36762
+dashboardUrl=http://54.159.71.215/dashboard?id=composure
+ceTaskId=AXTnZfz0E3IPffoSxZvW
+ceTaskUrl=http://54.159.71.215/api/ce/task?id=AXTnZfz0E3IPffoSxZvW
