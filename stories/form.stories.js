@@ -1,5 +1,5 @@
 import React from "react";
-import { TextInput, TextInputHorizontal, Select } from "../lib/Form";
+import { TextInput, TextInputHorizontal, Select } from "../src/Form";
 import {
   withKnobs,
   select,
@@ -20,8 +20,7 @@ export default {
   title: "Form",
   decorators: [storyFn => <Center>{storyFn()}</Center>, withKnobs],
   parameters: {
-    notes:
-      "Form component should be use to wrap input elements"
+    notes: "Form component should be use to wrap input elements"
   }
 };
 
@@ -51,16 +50,16 @@ export const withSelect = () => (
     isRequired={boolean("isRequired", true)}
     options={[
       {
-        label: 'Mango',
-        value: 'mango'
+        label: "Mango",
+        value: "mango"
       },
       {
-        label: 'Apple',
-        value: 'apple'
+        label: "Apple",
+        value: "apple"
       },
       {
-        label: 'Kiwi',
-        value: 'kiwi'
+        label: "Kiwi",
+        value: "kiwi"
       }
     ]}
   />
