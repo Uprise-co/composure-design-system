@@ -3,39 +3,29 @@ import { bool, func, object, string } from "prop-types";
 import Styled from "styled-components";
 
 // Colors
-import {   extended, semantic } from "@uprise/colors";
+import { extended, semantic } from "@uprise/colors";
 
-const TextInputWrapper = Styled.div`
-      min-height: 51px;
+const TextAreaWrapper = Styled.div`
       margin-top: ${props => (props.isFirst ? "10px" : "0px")};
       margin-bottom: ${props => (props.isLast ? "0px" : "21px")};
 `;
-const TextInputStyles = Styled.input`
+const TextAreaStyles = Styled.textarea`
       font-size: 16px;
       width: 100%;
-      outline: ${props => (props.outline ? "auto" : "none")};
-      border-bottom: ${props => {
+      min-height: ${props => (props.minHeight ? props.minHeight : "100px")};
+      border: ${props => {
         if (props.focused) {
           return `1px solid ${extended.blue.one}`;
         } else if (props.validation?.errors.length > 0) {
           return `1px solid ${semantic.error}`;
         } else {
-          return `1px solid ${extended.purple.five}`;
-        }
-      }};
-      border: ${props => {
-        if (props.focused && props.border) {
-          return `1px solid ${extended.blue.one}`;
-        } else if (props.validation?.errors.length > 0 && props.border) {
-          return `1px solid ${semantic.error}`;
-        } else if (props.border) {
           return `1px solid ${extended.purple.four}`;
-        } else {
-          return '0px'
         }
       }};
       padding-bottom: 8px;
       padding: ${props => props.padding};
+      outline: ${props => (props.outline ? "auto" : "none")};
+      font-family: "Proxima Nova";
 `;
 
 const LabelStyles = Styled.label`
@@ -62,17 +52,18 @@ const MessageStyles = Styled.label`
       transition: font-size 0.2s;
 `;
 
-export const TextInput = ({
+export const TextArea = ({
   id,
   type,
   name,
   label,
+  border,
+  disabled,
+  minHeight,
+  padding,
   isRequired,
   value,
   isFirst,
-  padding,
-  border,
-  disabled,
   isLast,
   outline,
   validation,
@@ -98,17 +89,18 @@ export const TextInput = ({
   }, []);
 
   return (
-    <TextInputWrapper isLast={isLast} isFirst={isFirst} {...props}>
+    <TextAreaWrapper isLast={isLast} isFirst={isFirst} {...props}>
       <LabelStyles htmlFor={id} focused={focused}>
         {label} {isRequired ? " * " : ""}
       </LabelStyles>
-      <TextInputStyles
+      <TextAreaStyles
         ref={elem => (inputRef = elem)}
         type={type}
         outline={outline}
-        padding={padding}
         border={border}
+        padding={padding}
         disabled={disabled}
+        minHeight={minHeight}
         placeholder={placeholder}
         name={name}
         id={id}
@@ -128,7 +120,7 @@ export const TextInput = ({
           {validation[name].errors[0]}
         </MessageStyles>
       )}
-    </TextInputWrapper>
+    </TextAreaWrapper>
   );
 };
 
@@ -136,7 +128,7 @@ export const TextInput = ({
 // symbol, node, element, elementType
 // instanceOf oneOf oneOfType shape, exact, func, any
 
-TextInput.propTypes = {
+TextArea.propTypes = {
   id: string.isRequired,
   onChange: func.isRequired,
   name: string.isRequired,
@@ -148,7 +140,7 @@ TextInput.propTypes = {
   isLast: bool
 };
 
-TextInput.defaultProps = {
+TextArea.defaultProps = {
   isRequired: false,
   isLast: false,
   validation: {}
