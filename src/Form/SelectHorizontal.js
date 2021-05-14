@@ -32,13 +32,13 @@ const OptionStyles = Styled.option`
 const MessageStyles = Styled.label`
       font-size: 12px;
       color:  ${(props) => {
-          if (props.focused) {
+            if (props.focused) {
               return `${extended.blue.one}`
-          } else if (props.validation?.errors.length > 0) {
-              return `${semantic.error}`
-          } else {
+            } else if (props.validation?.errors?.length > 0 || props.validation?.message) {
+                return `${semantic.error}`
+            } else {
               return `${extended.purple.five}`
-          }
+            }
       }};
       display: block;
       margin-top: 8px;
@@ -89,7 +89,7 @@ export const SelectHorizontal = ({
                 color={color}
                 backgroundColor={backgroundColor}
                 validate-control={validateControl}
-                validation={validation[name]}
+                validation={validation?.[name]}
                 required={isRequired}
                 focused={focused}
                 value={value}
@@ -103,13 +103,19 @@ export const SelectHorizontal = ({
                     )
                 })}
             </SelectStyles>
-            {validation[name]?.errors && (
+
+            {/* 2 formats of error messages
+                1. validate.js - validation?.[name]?.errors?.[0]
+                2. react-use-form - validation?.[name]?.message
+            */}
+
+            {(validation?.[name]?.errors || validation?.[name]?.message) && (
                 <MessageStyles
-                    htmlFor={id}
-                    focused={focused}
-                    validation={validation[name]}
+                htmlFor={id}
+                focused={focused}
+                validation={validation?.[name]}
                 >
-                    {validation[name].errors[0]}
+                    {validation?.[name]?.errors?.[0] || validation?.[name]?.message}                
                 </MessageStyles>
             )}
         </SelectWrapper>

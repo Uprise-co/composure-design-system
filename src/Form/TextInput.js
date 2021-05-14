@@ -3,7 +3,7 @@ import { bool, func, object, string } from "prop-types";
 import Styled from "styled-components";
 
 // Colors
-import {   extended, semantic } from "@uprise/colors";
+import { extended, semantic } from "@uprise/colors";
 
 const TextInputWrapper = Styled.div`
       min-height: 51px;
@@ -17,7 +17,7 @@ const TextInputStyles = Styled.input`
       border-bottom: ${props => {
         if (props.focused) {
           return `1px solid ${extended.blue.one}`;
-        } else if (props.validation?.errors.length > 0) {
+        } else if (props.validation?.errors?.length > 0 || props.validation?.message) {
           return `1px solid ${semantic.error}`;
         } else {
           return `1px solid ${extended.purple.five}`;
@@ -26,7 +26,7 @@ const TextInputStyles = Styled.input`
       border: ${props => {
         if (props.focused && props.border) {
           return `1px solid ${extended.blue.one}`;
-        } else if (props.validation?.errors.length > 0 && props.border) {
+        } else if ((props.validation?.errors?.length > 0 || props.validation?.message)&& props.border) {
           return `1px solid ${semantic.error}`;
         } else if (props.border) {
           return `1px solid ${extended.purple.four}`;
@@ -51,7 +51,7 @@ const MessageStyles = Styled.label`
       color:  ${props => {
         if (props.focused) {
           return `${extended.blue.one}`;
-        } else if (props.validation?.errors.length > 0) {
+        } else if (props.validation?.errors?.length > 0 || props.validation?.message) {
           return `${semantic.error}`;
         } else {
           return `${extended.purple.five}`;
@@ -113,19 +113,25 @@ export const TextInput = ({
         name={name}
         id={id}
         validate-control={validateControl}
-        validation={validation[name]}
+        validation={validation?.[name]}
         required={isRequired}
         focused={focused}
         value={value}
         onChange={value => onChange(value)}
       />
-      {validation[name]?.errors && (
+
+      {/* 2 formats of error messages
+          1. validate.js - validation?.[name]?.errors?.[0]
+          2. react-use-form - validation?.[name]?.message
+      */}
+
+      {(validation?.[name]?.errors || validation?.[name]?.message) && (
         <MessageStyles
           htmlFor={id}
           focused={focused}
-          validation={validation[name]}
+          validation={validation?.[name]}
         >
-          {validation[name].errors[0]}
+          {validation?.[name]?.errors?.[0] || validation?.[name]?.message}
         </MessageStyles>
       )}
     </TextInputWrapper>

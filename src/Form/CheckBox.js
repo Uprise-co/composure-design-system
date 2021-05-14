@@ -40,7 +40,7 @@ const MessageStyles = Styled.label`
     color:  ${props => {
       if (props.focused) {
         return `${extended.blue.one}`;
-      } else if (props.validation?.errors.length > 0) {
+      } else if (props.validation?.errors?.length > 0 || props.validation?.message) {
         return `${semantic.error}`;
       } else {
         return `${extended.purple.five}`;
@@ -88,7 +88,7 @@ export const CheckBox = ({
         ref={elem => (inputRef = elem)}
         type="checkbox"
         validate-control={validateControl}
-        validation={validation[name]}
+        validation={validation?.[name]}
         focused={focused}
         required={isRequired}
         value={value}
@@ -99,14 +99,19 @@ export const CheckBox = ({
           {isRequired ? " * " : ""}
           <span dangerouslySetInnerHTML={{ __html: label }} />
         </LabelStyles>
-        {validation[name]?.errors && (
+        {/* 2 formats of error messages
+            1. validate.js - validation?.[name]?.errors?.[0]
+            2. react-use-form - validation?.[name]?.message
+        */}
+
+        {(validation?.[name]?.errors || validation?.[name]?.message) && (
           <MessageStyles
             htmlFor={id}
             focused={focused}
-            validation={validation[name]}
+            validation={validation?.[name]}
           >
-            {validation[name].errors[0]}
-          </MessageStyles>
+        {validation?.[name]?.errors?.[0] || validation?.[name]?.message}
+         </MessageStyles>
         )}
       </TextWrap>
     </CheckBoxWrapper>
