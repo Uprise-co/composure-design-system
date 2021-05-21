@@ -1,16 +1,19 @@
 import React from "react"
-import {bool, func, string} from "prop-types"
+import {string} from "prop-types"
 import Styled from "styled-components"
 // Colors
-import {extended, primary} from "@uprise/colors"
-// Components
-import {Medium} from "@uprise/text"
+import {extended} from "@uprise/colors"
+ 
 
 const AccordianContentStyle = Styled.div`
 `
 
 export const AccordianContent = ({className, children}) => {
-	return <AccordianContentStyle className={className} dangerouslySetInnerHTML={{__html: children}} />
+	if(typeof children === Object) {
+		return <AccordianContentStyle className={className} >{children}</AccordianContentStyle>
+	} else {
+		return <AccordianContentStyle className={className} dangerouslySetInnerHTML={{__html: children}} />
+	}
 }
 
 // array, bool, func, number, object, string
