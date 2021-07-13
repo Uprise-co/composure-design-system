@@ -56,13 +56,13 @@ const Content = Styled.div`
     ${props =>
       props.scroll &&
       css`
-        height: 100%;
+        max-height: 100%;
       `};
 
     ${props =>
       props.scroll &&
       css`
-        overflow-y: scroll;
+        overflow-y: auto;
       `};
     
 
