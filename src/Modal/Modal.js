@@ -10,6 +10,7 @@ const Content = Styled.div`
 	z-index: 3000;
 	border-radius: 10px;
 	position: relative;
+  
 
 	${props =>
     props.shadow &&
@@ -37,6 +38,7 @@ const Content = Styled.div`
     css`
       width: ${props.width};
     `};
+    
 	${props =>
     props.height &&
     css`
@@ -56,13 +58,13 @@ const Content = Styled.div`
     ${props =>
       props.scroll &&
       css`
-        height: 100%;
+        max-height: 100%;
       `};
 
     ${props =>
       props.scroll &&
       css`
-        overflow-y: scroll;
+        overflow-y: auto;
       `};
     
 
