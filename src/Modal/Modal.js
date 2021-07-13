@@ -10,7 +10,6 @@ const Content = Styled.div`
 	z-index: 3000;
 	border-radius: 10px;
 	position: relative;
-  
 
 	${props =>
     props.shadow &&
@@ -38,7 +37,6 @@ const Content = Styled.div`
     css`
       width: ${props.width};
     `};
-    
 	${props =>
     props.height &&
     css`
