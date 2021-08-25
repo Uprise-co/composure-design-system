@@ -1,6 +1,6 @@
 {
   "name": "@uprise/modal",
-  "version": "1.0.4",
+  "version": "1.0.12",
   "description": "- [Installation](#installation) - [Quick Example](#quick-start)",
   "main": "index.js",
   "scripts": {

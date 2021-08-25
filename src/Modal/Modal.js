@@ -42,6 +42,11 @@ const Content = Styled.div`
     css`
       height: ${props.height};
     `};
+    ${props =>
+      props.overflow &&
+      css`
+      overflow: ${props.overflow};
+      `};
 	${props =>
     props.textAlign &&
     css`
@@ -51,13 +56,13 @@ const Content = Styled.div`
     ${props =>
       props.scroll &&
       css`
-        height: 100%;
+        max-height: 100%;
       `};
 
     ${props =>
       props.scroll &&
       css`
-        overflow-y: scroll;
+        overflow-y: auto;
       `};
     
 
@@ -111,6 +116,8 @@ export const Modal = ({
   shadow,
   textAlign,
   width,
+  height,
+  overflow,
   backgroundColor,
   padding,
   isOpen,
@@ -148,6 +155,8 @@ export const Modal = ({
           <Content
             textAlign={textAlign}
             width={width}
+            height={height}
+            overflow={overflow}
             padding={padding}
             scroll={scroll}
             backgroundColor={backgroundColor}
@@ -172,6 +181,8 @@ Modal.propTypes = {
   className: string,
   padding: string,
   width: string,
+  height: string,
+  overflow: string,
   border: string,
   shadow: bool,
   backgroundColor: string,
