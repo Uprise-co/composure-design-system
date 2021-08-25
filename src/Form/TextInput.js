@@ -14,15 +14,6 @@ const TextInputStyles = Styled.input`
       font-size: 16px;
       width: 100%;
       outline: ${props => (props.outline ? "auto" : "none")};
-      border-bottom: ${props => {
-        if (props.focused) {
-          return `1px solid ${extended.blue.one}`;
-        } else if (props.validation?.errors?.length > 0 || props.validation?.message) {
-          return `1px solid ${semantic.error}`;
-        } else {
-          return `1px solid ${extended.purple.five}`;
-        }
-      }};
       border: ${props => {
         if (props.focused && props.border) {
           return `1px solid ${extended.blue.one}`;
@@ -32,6 +23,16 @@ const TextInputStyles = Styled.input`
           return `1px solid ${extended.purple.four}`;
         } else {
           return '0px'
+        }
+      }};
+      border-bottom: ${props => {
+        
+        if (props.focused) {
+          return `1px solid ${extended.blue.one}`;
+        } else if (props.validation?.errors?.length > 0 || props.validation?.message) {
+          return `1px solid ${semantic.error}`;
+        } else {
+          return `1px solid ${extended.purple.five}`;
         }
       }};
       padding-bottom: 8px;
@@ -79,10 +80,11 @@ export const TextInput = ({
   validateControl,
   placeholder,
   onChange,
+  inputRef,
   ...props
 }) => {
   const [focused, setFocused] = useState(false);
-  let inputRef = useRef(null);
+  let ref = useRef(inputRef);
 
   const _onFocus = event => {
     setFocused(true);
@@ -93,8 +95,8 @@ export const TextInput = ({
   };
 
   useEffect(() => {
-    inputRef.addEventListener("focus", _onFocus);
-    inputRef.addEventListener("blur", _onBlur);
+    ref.addEventListener("focus", _onFocus);
+    ref.addEventListener("blur", _onBlur);
   }, []);
 
   return (
@@ -103,7 +105,7 @@ export const TextInput = ({
         {label} {isRequired ? " * " : ""}
       </LabelStyles>
       <TextInputStyles
-        ref={elem => (inputRef = elem)}
+        ref={elem => (ref = elem)}
         type={type}
         outline={outline}
         padding={padding}

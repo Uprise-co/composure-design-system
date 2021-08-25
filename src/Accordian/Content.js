@@ -9,7 +9,7 @@ const AccordianContentStyle = Styled.div`
 `
 
 export const AccordianContent = ({className, children}) => {
-	if(typeof children === Object) {
+	if(typeof children === 'object') {
 		return <AccordianContentStyle className={className} >{children}</AccordianContentStyle>
 	} else {
 		return <AccordianContentStyle className={className} dangerouslySetInnerHTML={{__html: children}} />

@@ -70,10 +70,11 @@ export const TextArea = ({
   validateControl,
   placeholder,
   onChange,
+  inputRef,
   ...props
 }) => {
   const [focused, setFocused] = useState(false);
-  let inputRef = useRef(null);
+  let ref = useRef(inputRef);
 
   const _onFocus = event => {
     setFocused(true);
@@ -84,8 +85,8 @@ export const TextArea = ({
   };
 
   useEffect(() => {
-    inputRef.addEventListener("focus", _onFocus);
-    inputRef.addEventListener("blur", _onBlur);
+    ref.addEventListener("focus", _onFocus);
+    ref.addEventListener("blur", _onBlur);
   }, []);
 
   return (
@@ -94,7 +95,7 @@ export const TextArea = ({
         {label} {isRequired ? " * " : ""}
       </LabelStyles>
       <TextAreaStyles
-        ref={elem => (inputRef = elem)}
+        ref={elem => (ref = elem)}
         type={type}
         outline={outline}
         border={border}

@@ -1,6 +1,6 @@
 {
   "name": "@uprise/charts",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "description": "- [Installation](#installation) - [Quick Example](#quick-start)",
   "main": "index.js",
   "scripts": {
@@ -9,6 +9,11 @@
   "author": "Mark Santoso",
   "license": "ISC",
   "dependencies": {
-    "@uprise/colors": "^1.0.0"
+    "@uprise/colors": "^1.0.0",
+    "chart.js": "^3.2.1",
+    "react-chartjs-2": "^2.8.0"
+  },
+  "peerDependencies": {
+    "react-chartjs-2": "^2.8.0"
   }
 }

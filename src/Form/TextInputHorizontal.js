@@ -40,10 +40,11 @@ export const TextInputHorizontal = ({
     validation,
     validateControl,
     placeholder,
+    inputRef,
     ...props
 }) => {
     const [focused, setFocused] = useState(false)
-    let inputRef = useRef(null)
+    let ref = useRef(inputRef)
 
     const _onFocus = event => {
         setFocused(true)
@@ -54,14 +55,14 @@ export const TextInputHorizontal = ({
     }
 
     useEffect(() => {
-        inputRef.addEventListener("focus", _onFocus)
-        inputRef.addEventListener("blur", _onBlur)
+        ref.addEventListener("focus", _onFocus)
+        ref.addEventListener("blur", _onBlur)
     }, [])
 
     return (
         <TextInputWrapper>
             <TextInputStyles
-                ref={elem => (inputRef = elem)}
+                ref={elem => (ref = elem)}
                 type={type}
                 placeholder={placeholder}
                 name={name}
@@ -98,7 +99,6 @@ export const TextInputHorizontal = ({
 
 TextInputHorizontal.propTypes = {
     id: string.isRequired,
-    onChange: func.isRequired,
     name: string.isRequired,
     validation: object,
     placeholder: string,
@@ -108,5 +108,6 @@ TextInputHorizontal.propTypes = {
 
 TextInputHorizontal.defaultProps = {
     isRequired: false,
-    validation: {}
+    validation: {},
+    inputRef: null
 }

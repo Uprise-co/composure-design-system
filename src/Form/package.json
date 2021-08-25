@@ -1,6 +1,6 @@
 {
   "name": "@uprise/form",
-  "version": "1.2.17",
+  "version": "1.2.24",
   "description": "- [Installation](#installation) - [Quick Example](#quick-start)",
   "main": "index.js",
   "scripts": {
