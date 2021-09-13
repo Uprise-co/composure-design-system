@@ -90,3 +90,15 @@ export const semantic = {
 	warning: "rgb(255,243,227)",
 	link: "rgb(2, 121, 255)"
 }
+export const allianzColors = {
+	blue: "#0070A1",
+	green: "#008C9F",
+	blue1: "#D1E9EE",
+	blue2: "#EDF8FE",
+	blue3: "#EAF7F9",
+	black: "#4E5250",
+	black2: "#747474",
+	white: "#ffffff",
+	orange: "#FF9D39",
+	orange2: "#FFF0E2"
+  };
