@@ -1,7 +1,7 @@
 {
   "name": "uprise",
   "author": "Mark Santoso",
-  "version": "1.2.3",
+  "version": "1.2.2",
   "description": "Uprise ui kit",
   "scripts": {
     "build": "babel --presets @babel/react --plugins @babel/plugin-proposal-optional-chaining src --out-dir ./lib --copy-files",
