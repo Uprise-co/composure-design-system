@@ -13,9 +13,8 @@ export const allianzColors = {
 	orange2: "#FFF0E2"
 };
 const getTheme = ()=>{
-  console.log(window.location.hostname)
   let theme
-    if(window.location.hostname ==='allianz.uprise.co' ||  window.location.hostname === 'dev-allianz-app.uprise.co'){
+    if(window?.location?.hostname ==='allianz.uprise.co' ||  window?.location?.hostname === 'dev-allianz-app.uprise.co'){
       theme={
         primary:{
           purple:allianzColors.blue,
